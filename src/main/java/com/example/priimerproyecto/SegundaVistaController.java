@@ -6,7 +6,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import modelo.Fichero;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class SegundaVistaController {
@@ -30,10 +32,8 @@ public class SegundaVistaController {
     @FXML
     Label error;
 
-    //ArrayList que guarda los paises registrados
-    ArrayList<String> paises = new ArrayList<>();
 
-    public void guardarDatos(ActionEvent actionEvent) {
+    public void guardarDatos(ActionEvent actionEvent) throws IOException {
 
         //Variables
         String[] cont = {"America", "Europa", "Asia", "Africa", "Oceania", "Antartida"};
@@ -45,11 +45,9 @@ public class SegundaVistaController {
         error.setText("");
 
         //Compruebo que el pais aun no esta registrado
-        for (String pais : paises) {
-            if (pais.equalsIgnoreCase(nombrePais.getText())) {
-                errores += "Error, país ya registrado!\n";
-                esCorrecto = false;
-            }
+        if(Fichero.consultarPais(nombrePais.getText().trim())){
+            errores += "El país que intentas introducir ya está registrado\n";
+            esCorrecto = false;
         }
 
         //Compruebo que la poblacion sea un numero
@@ -92,8 +90,13 @@ public class SegundaVistaController {
 
         //Si todos los datos son correctos, los guardo en el fichero binario y guardo el nuevo pais en el arrayList
         if (esCorrecto) {
-            paises.add(nombrePais.getText());
             error.setText("País guardado correctamente");
+            Fichero.altaPais(nombrePais.getText().trim(), pobl, idioma.getText(), moneda.getText(), continente.getText());
+            nombrePais.setText("");
+            poblacion.setText("");
+            idioma.setText("");
+            moneda.setText("");
+            continente.setText("");
         } else {
             error.setText(errores);
         }
