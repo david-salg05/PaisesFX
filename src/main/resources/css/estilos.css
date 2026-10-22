@@ -1,0 +1,59 @@
+/* Fondo de la ventana */
+.root {
+    -fx-background-color: #E8F1F2;
+}
+
+/* Estilo de todas las etiquetas */
+.label {
+    -fx-text-fill: #13293D;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-min-width: 100px;
+}
+
+/* Titulo principal */
+#titulo {
+    -fx-background-color: #13293D;
+    -fx-background-radius: 20;
+    -fx-text-fill: white;
+    -fx-font-size: 22px;
+    -fx-font-family: "Georgia";
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+/* Campos a rellenar */
+.text-field {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-color: #247BA0;
+    -fx-border-radius: 8;
+}
+
+/* Caja grande de texto */
+#textArea {
+    -fx-border-color: #247BA0;
+    -fx-border-radius: 8;
+}
+
+/* Estilo del boton de guardar */
+#botonGuardar {
+    -fx-background-color: #1B998B;
+    -fx-background-radius: 20;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-color: #1B998B;
+    -fx-border-radius: 20;
+}
+
+/* Al pasar el raton: se intercambian los colores */
+#botonGuardar:hover {
+    -fx-background-color: white;
+    -fx-text-fill: #1B998B;
+}
+
+/* Que los mensajes largos salten de linea */
+#error {
+    -fx-wrap-text: true;
+    -fx-text-fill: red;
+}

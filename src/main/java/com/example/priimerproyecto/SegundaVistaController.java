@@ -84,7 +84,7 @@ public class SegundaVistaController {
         }
 
         if (!continenteValido) {
-            errores += "El continente no es valido\n";
+            errores += "El continente no es válido\n";
             esCorrecto = false;
         }
 

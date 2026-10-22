@@ -4,14 +4,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.priimerproyecto.SegundaVistaController">
+<AnchorPane id="fondo" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../css/estilos.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.priimerproyecto.SegundaVistaController">
    <children>
       <VBox layoutY="77.0" prefHeight="323.0" prefWidth="289.0">
          <children>
             <HBox prefHeight="25.0" prefWidth="290.0">
                <children>
-                  <Label prefHeight="36.0" prefWidth="81.0" text="Nombre país: " />
-                  <TextField fx:id="nombrePais" alignment="CENTER" prefHeight="25.0" prefWidth="149.0" />
+                  <Label id="label" prefHeight="36.0" prefWidth="81.0" text="Nombre país: " />
+                  <TextField id="text-field" fx:id="nombrePais" alignment="CENTER" prefHeight="25.0" prefWidth="149.0" />
                </children>
                <opaqueInsets>
                   <Insets />
@@ -21,8 +21,8 @@
                </VBox.margin></HBox>
             <HBox layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="240.0">
                <children>
-                  <Label prefHeight="25.0" prefWidth="79.0" text="Poblacion:" />
-                  <TextField fx:id="poblacion" alignment="CENTER" prefHeight="25.0" prefWidth="151.0" />
+                  <Label id="label" prefHeight="25.0" prefWidth="79.0" text="Poblacion:" />
+                  <TextField id="text-field" fx:id="poblacion" alignment="CENTER" prefHeight="25.0" prefWidth="151.0" />
                </children>
                <opaqueInsets>
                   <Insets />
@@ -33,8 +33,8 @@
             </HBox>
             <HBox layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="290.0">
                <children>
-                  <Label prefHeight="36.0" prefWidth="81.0" text="Idioma:" />
-                  <TextField fx:id="idioma" alignment="CENTER" prefHeight="25.0" prefWidth="149.0" />
+                  <Label id="label" prefHeight="36.0" prefWidth="81.0" text="Idioma:" />
+                  <TextField id="text-field" fx:id="idioma" alignment="CENTER" prefHeight="25.0" prefWidth="149.0" />
                </children>
                <opaqueInsets>
                   <Insets />
@@ -45,8 +45,8 @@
             </HBox>
             <HBox layoutX="10.0" layoutY="63.0" prefHeight="25.0" prefWidth="290.0">
                <children>
-                  <Label prefHeight="36.0" prefWidth="81.0" text="Moneda:" />
-                  <TextField fx:id="moneda" alignment="CENTER" prefHeight="25.0" prefWidth="149.0" />
+                  <Label id="label" prefHeight="36.0" prefWidth="81.0" text="Moneda:" />
+                  <TextField id="text-field" fx:id="moneda" alignment="CENTER" prefHeight="25.0" prefWidth="149.0" />
                </children>
                <opaqueInsets>
                   <Insets />
@@ -57,8 +57,8 @@
             </HBox>
             <HBox layoutX="10.0" layoutY="88.0" prefHeight="25.0" prefWidth="290.0">
                <children>
-                  <Label prefHeight="36.0" prefWidth="81.0" text="Continente:" />
-                  <TextField fx:id="continente" alignment="CENTER" prefHeight="25.0" prefWidth="149.0" />
+                  <Label id="label" prefHeight="36.0" prefWidth="81.0" text="Continente:" />
+                  <TextField id="text-field" fx:id="continente" alignment="CENTER" prefHeight="25.0" prefWidth="149.0" />
                </children>
                <opaqueInsets>
                   <Insets />
@@ -69,9 +69,9 @@
             </HBox>
          </children>
       </VBox>
-      <Button layoutX="402.0" layoutY="350.0" mnemonicParsing="false" onAction="#guardarDatos" text="GUARDAR" />
-      <TextArea fx:id="textArea" layoutX="303.0" layoutY="79.0" prefHeight="109.0" prefWidth="269.0" />
-      <Label layoutX="255.0" layoutY="24.0" prefHeight="42.0" prefWidth="108.0" text="ALTA DE PAÍSES" />
-      <Label fx:id="error" layoutX="303.0" layoutY="202.0" prefHeight="130.0" prefWidth="269.0" />
+      <Button id="botonGuardar" layoutX="402.0" layoutY="350.0" mnemonicParsing="false" onAction="#guardarDatos" text="GUARDAR" />
+      <TextArea id="textArea" fx:id="textArea" layoutX="303.0" layoutY="79.0" prefHeight="109.0" prefWidth="269.0" />
+      <Label id="titulo" layoutX="158.0" layoutY="24.0" prefHeight="42.0" prefWidth="289.0" text="ALTA DE PAÍSES" />
+      <Label id="error" fx:id="error" layoutX="303.0" layoutY="202.0" prefHeight="130.0" prefWidth="269.0" />
    </children>
 </AnchorPane>
