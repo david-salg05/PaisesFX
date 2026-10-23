@@ -46,29 +46,6 @@ public class Fichero {
         return false;
     }
 
-    //Funcion que lista los paises que tengo en el fichero
-    public static void listadoPaises() throws IOException {
-
-        FileInputStream fis = new FileInputStream(ruta);
-        DataInputStream dis = new DataInputStream(fis);
-
-        //debemos leer en el mismo orden que escribimos
-        while(true){
-            try {
-                System.out.print(dis.readUTF() + " ");
-                System.out.print(dis.readInt()+ " ");
-                System.out.print(dis.readUTF() + " ");
-                System.out.print(dis.readUTF() + " ");
-                System.out.print(dis.readUTF() + " ");
-                System.out.println();
-            } catch (IOException e) {
-                System.out.println("\nFin fichero\n");
-                break;
-            }
-        }
-        dis.close();
-        fis.close();
-    }
 
     //Funcion que da de alta a un pais en un fichero
     public static void altaPais(String nombre, int poblacion, String idioma, String moneda, String continente) throws IOException {

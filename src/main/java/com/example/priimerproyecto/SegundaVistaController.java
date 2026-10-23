@@ -44,12 +44,6 @@ public class SegundaVistaController {
         //Limpio el label de error
         error.setText("");
 
-        //Compruebo que el pais aun no esta registrado
-        if(Fichero.consultarPais(nombrePais.getText().trim())){
-            errores += "El país que intentas introducir ya está registrado\n";
-            esCorrecto = false;
-        }
-
         //Compruebo que la poblacion sea un numero
         try {
             pobl = Integer.parseInt(poblacion.getText());
@@ -86,6 +80,14 @@ public class SegundaVistaController {
         if (!continenteValido) {
             errores += "El continente no es válido\n";
             esCorrecto = false;
+        }
+
+        if(esCorrecto){
+            //Compruebo que el pais aun no esta registrado
+            if(Fichero.consultarPais(nombrePais.getText().trim())){
+                errores += "El país que intentas introducir ya está registrado\n";
+                esCorrecto = false;
+            }
         }
 
         //Si todos los datos son correctos, los guardo en el fichero binario y guardo el nuevo pais en el arrayList
