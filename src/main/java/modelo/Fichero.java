@@ -67,4 +67,45 @@ public class Fichero {
         //Imprimo un mensaje final
         System.out.println("\nPaís registrado correctamente\n");
     }
+
+    //Funcion que nos devuelve la informacion de un pais
+    public static String listarPais(String valorComprobar) throws IOException {
+
+        FileInputStream fis = new FileInputStream(ruta);
+        DataInputStream dis = new DataInputStream(fis);
+
+        String devolver = "";
+
+        try {
+            while (true) {
+
+                // Leemos los datos del pais en el mismo orden que escribimos
+                String nombre = dis.readUTF();
+                int poblacion = dis.readInt();
+                String idioma = dis.readUTF();
+                String moneda = dis.readUTF();
+                String continente = dis.readUTF();
+
+                // Comprobamos si es el pais que buscamos
+                if (valorComprobar.equalsIgnoreCase(nombre)) {
+
+                    devolver = "Nombre: " + nombre + "\n";
+                    devolver += "Poblacion: " + poblacion + "\n";
+                    devolver += "Idioma: " + idioma + "\n";
+                    devolver += "Moneda: " + moneda + "\n";
+                    devolver += "Continente: " + continente;
+
+                    break;
+                }
+            }
+
+        } catch (EOFException e) {
+            System.out.println("Fin de información");
+        }
+
+        dis.close();
+        fis.close();
+
+        return devolver;
+    }
 }
